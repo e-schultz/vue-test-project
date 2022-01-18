@@ -1,11 +1,13 @@
 <script setup>
+import { ref } from "Vue"
 import DynamicOne from "./DynamicOne.vue"
 import DynamicTwo from "./DynamicTwo.vue"
 let message = "Test";
+let showWich = ref("DynamicOne")
 </script>
 <template>
-<component :is="DynamicOne"/>
-<br/>
-<component :is="DynamicTwo"/>
-{{message}}
+
+Showing .... {{showWich}}
+<component :is="showWich"/>
+<button @click="showWich = (showWich == 'DynamicOne') ? 'DynamicTwo' : 'DynamicOne'">Swap</button>
 </template>
