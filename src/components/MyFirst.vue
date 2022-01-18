@@ -2,7 +2,7 @@
 import { ref } from "Vue";
 import DynamicOne from "./DynamicOne.vue";
 import DynamicTwo from "./DynamicTwo.vue";
-
+import TextInput from "./TextInput.vue";
 let message = "Test";
 let schema = [
   /*{
