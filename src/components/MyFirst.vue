@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "Vue";
+import { ref, computed } from "vue";
 import DynamicOne from "./DynamicOne.vue";
 import DynamicTwo from "./DynamicTwo.vue";
 import TextInput from "./TextInput.vue";
@@ -33,6 +33,9 @@ let schema = [
   },*/
 ];
 let showWich = ref("DynamicOne");
+let firstName = ref("Evan");
+let lastName = ref("Schultz");
+let fullName = computed(() => `${firstName} ${lastName.value}`);
 </script>
 <template>
   <div>
@@ -43,5 +46,8 @@ let showWich = ref("DynamicOne");
     </button>
     <br />
     <component :is="TextInput" v-bind="schema[0]" />
+    <br />
+    Hey {{ firstName }} {{ lastName }} <br />
+    {{ fullName }}
   </div>
 </template>
